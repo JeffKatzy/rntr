@@ -16,7 +16,12 @@ class AptsController < ApplicationController
   end
 
   private
+# This logic belongs in a calculator object that takes in apts and returns a score object, etc.  
+  
   def commute_score(duration)
+    # JK: this can be refactored using logic.  Calculate the score, without using a bunch of elsif statements. 
+#     You can even build a calculator object that calculates for multiple different resources.
+
     if duration < 10
       score = 10
     elsif duration >= 10 && duration < 15
@@ -41,6 +46,7 @@ class AptsController < ApplicationController
   end
 
   def crime_score(felonies)
+   # This is better.
     score = felonies / 10
     score >= 10 ? roundScore = 9 : roundScore = score.floor
     10 - roundScore
