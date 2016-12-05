@@ -4,6 +4,8 @@ require 'httparty'
 class SchoolAdapter
   include HTTParty
 
+  
+#   change method name to just be schools, not get_schools, etc.
   def self.get_schools
     self.get("https://data.cityofnewyork.us/resource/9pyc-nsiu.json?zip=#{@zipcode}")
   end
