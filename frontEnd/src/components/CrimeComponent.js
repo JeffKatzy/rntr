@@ -9,6 +9,7 @@ const CrimeComponent = (props) => {
 
   function handleSubmit(event){
     event.preventDefault()
+//     this url should be in the action creator, not in the component
     let urlAddress = `${event.target.children[1].value}+${event.target.children[4].value}+${event.target.children[7].value}+${event.target.children[10].value}`
     props.getCrime(urlAddress)
   }
