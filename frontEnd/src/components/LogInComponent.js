@@ -8,6 +8,7 @@ const LogInComponent = (props) => {
 
   function handleSubmit(event){
     event.preventDefault()
+    // don't access via target.children, instead update the state each time the input changes.
     props.logIn(event.target.children[1].value, event.target.children[4].value)
   }
 
